@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Outfit:wght@400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-offwhite text-navy font-sans antialiased;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-helvetica font-bold tracking-tight;
+  }
+}
+
+
+/* Species-Specific Marine Life Animations */
+
+/* Jellyfish Pulse & Float */
+@keyframes jellyfish-float {
+  0%, 100% {
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    transform: translateY(-30px) scaleY(1.06) scaleX(0.94);
+  }
+}
+.animate-jellyfish {
+  animation: jellyfish-float 6s ease-in-out infinite;
+}
+
+/* Fish Swimming Tail Fin Wiggle (Idle) */
+@keyframes fish-wiggle {
+  0%, 100% { transform: rotate(0deg) translateY(0); }
+  50% { transform: rotate(6deg) translateY(-3px); }
+}
+.animate-fish-idle {
+  animation: fish-wiggle 1.5s ease-in-out infinite;
+}
+
+/* Fish School Swim Right-to-Left and Left-to-Right */
+@keyframes swim-right {
+  0% { transform: translateX(-20vw) scaleX(1) translateY(0); }
+  50% { transform: translateX(50vw) scaleX(1) translateY(-20px); }
+  100% { transform: translateX(120vw) scaleX(1) translateY(0); }
+}
+.animate-swim-right {
+  animation: swim-right 20s linear infinite;
+}
+
+@keyframes swim-left {
+  0% { transform: translateX(120vw) scaleX(-1) translateY(0); }
+  50% { transform: translateX(50vw) scaleX(-1) translateY(20px); }
+  100% { transform: translateX(-20vw) scaleX(-1) translateY(0); }
+}
+.animate-swim-left {
+  animation: swim-left 22s linear infinite;
+}
+
+/* Whale Glide */
+@keyframes whale-glide {
+  0% { transform: translateX(-30vw) translateY(0) rotate(1deg); }
+  50% { transform: translateX(45vw) translateY(-40px) rotate(-2deg); }
+  100% { transform: translateX(120vw) translateY(0) rotate(1deg); }
+}
+.animate-whale {
+  animation: whale-glide 48s ease-in-out infinite;
+}
+
+/* Crab Seafloor Side to Side */
+@keyframes crab-scuttle {
+  0%, 100% { transform: translateX(0) scaleX(1) translateY(0); }
+  25% { transform: translateX(40px) scaleX(1) translateY(-3px); }
+  49% { transform: translateX(80px) scaleX(1) translateY(0); }
+  50% { transform: translateX(80px) scaleX(-1) translateY(0); }
+  75% { transform: translateX(40px) scaleX(-1) translateY(-3px); }
+  99% { transform: translateX(0) scaleX(-1) translateY(0); }
+}
+.animate-crab {
+  animation: crab-scuttle 9s ease-in-out infinite;
+}
+
